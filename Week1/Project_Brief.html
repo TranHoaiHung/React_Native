@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<TITLE> Project_Brief </TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+	<style type="text/css">
+		html {
+			min-height: 100%; 
+		}
+
+		body {
+			background: -webkit-linear-gradient( #0066FF, #CCFFFF); 
+			background: -o-linear-gradient( #0066FF, #CCFFFF); 
+			background: -moz-linear-gradient( #0066FF, #CCFFFF); 
+			background: linear-gradient( #0066FF, #CCFFFF); 
+			background-color: #0066FF
+			padding: 80px 0px;
+			text-align: center;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		 
+        #header{
+            font-family: Comic Sans MS;
+            text-align:center;
+            padding:40px 0px;
+			color: #FFCCCC;
+			font-size:35px
+        }
+	
+		
+		.btn {
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: #fff;
+			padding: 15px 30px;
+			background: #56CCF2;
+			background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2, #56CCF2, #2F80ED);
+			background: linear-gradient(to right, #2F80ED, #56CCF2, #56CCF2, #2F80ED);
+			border: none;
+			border-radius: 0;
+			moz-transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+			background-size: 300% 100%;
+			display: inline-block;
+			transform: skew(-15deg);
+			}
+		.btn span {
+			/* Giữ cho chữ không bị nghiêng theo */
+			display: inline-block;
+			transform: skew(15deg);
+		}
+		.btn:hover,
+		.btn:focus {
+			background-position: 100% 0;
+			moz-transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+        <h1> Number Guessing Game</h1>
+    </div>
+	
+	<div >
+		<input class="btn" type="number" id="number" placeholder="Please Number...">
+	</div>
+	
+	<div  >
+		<a class="btn" id="guessButton" onclick = "myFunction()" ><span>Checked</span></a>
+	</div>
+	
+	<div >
+		<p id = "result" > Please type any number  </p>
+	</div> 
+	<div>
+		<p id = "List" >  </p>
+	</div >
+	<script >
+		var min = 1;
+		var max = 50;
+		var finalNumber = Math.floor(Math.random() * (+max - +min)) + +min;
+		var listGues = ' '  ;
+		var count = 0;
+		function myFunction(){
+			var youInput = document.getElementById('number').value;
+			if(count == 10 ) {
+				alert(
+				"You lose. List number you gues: " + listGues +   "  >> Please retry!!"
+				);
+				location.reload();
+				count =0;
+			}
+			if(youInput == finalNumber) {
+				document.getElementById('result').innerHTML = "Great! You are excellent "; 
+				document.getElementById('result').style.color = "green"; }
+			else if (youInput > finalNumber) {
+				count ++;
+				document.getElementById('result').innerHTML = "Your guess number is too high. You have " + (10- count) + " guesses left !!"  ; 
+				document.getElementById('result').style.color = "red"; }
+			else {	
+				count ++;
+				document.getElementById('result').innerHTML = "Your guess number is too low. You have " + (10- count) + " guesses left !!";
+				document.getElementById('result').style.color = "red"; 		}
+				
+			listGues = listGues	+ youInput + ', ' ;
+			document.getElementById('List').innerHTML = listGues;
+		}
+	</script> 
+	
+</body>
+</html>
