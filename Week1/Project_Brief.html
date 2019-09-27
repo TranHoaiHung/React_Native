@@ -35,10 +35,10 @@
 			color: #fff;
 			padding: 15px 30px;
 			background: #56CCF2;
-			background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2, #56CCF2, #2F80ED);
-			background: linear-gradient(to right, #2F80ED, #56CCF2, #56CCF2, #2F80ED);
-			border: none;
-			border-radius: 0;
+			background: -webkit-linear-gradient(to right, #FF00FF, #FF99FF, #FF99FF, #FF00FF);
+			background: linear-gradient(to right, #FF00FF, #FF99FF, #FF99FF, #FF00FF);
+			border: 2px;
+			border-radius: 10px;
 			moz-transition: all .4s ease-in-out;
 			-o-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
@@ -98,7 +98,13 @@
 			}
 			if(youInput == finalNumber) {
 				document.getElementById('result').innerHTML = "Great! You are excellent "; 
-				document.getElementById('result').style.color = "green"; }
+				document.getElementById('result').style.color = "green";
+				alert(
+				"Great, You WON!!!  Are you retry start game ?"
+				);
+				location.reload();
+				count =0;
+				}
 			else if (youInput > finalNumber) {
 				count ++;
 				document.getElementById('result').innerHTML = "Your guess number is too high. You have " + (10- count) + " guesses left !!"  ; 
