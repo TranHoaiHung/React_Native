@@ -24,15 +24,15 @@ export default function App() {
  }
   return (
     <View style={styles.container}>
-      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/>
+      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#ffffff" translucent = {true}/>
       <View style={styles.Header_Top}>
         <View style={styles.set_title}>
-           <TouchableHighlight style={styles.Button_Header}>
+           <TouchableHighlight style={styles.Button_Header} onPress = {showAlert} >
                   <Ionicons style={styles.set_imageleft} name="md-arrow-back"  size={30} />
             </TouchableHighlight>
         </View>
         <View style = {styles.set_title}>
-            <TouchableHighlight style={styles.Button_Header}>
+            <TouchableHighlight style={styles.Button_Header} onPress = {showAlert} >
                   <AntDesign style={styles.set_imageRight} name="appstore1" color="#858483" size={25} />  
             </TouchableHighlight>
         </View>
@@ -103,17 +103,17 @@ export default function App() {
       </View>
       <View style = {styles.Bottom}>
           <View style = {styles.Button_tab}>
-              <TouchableHighlight style={styles.set_buttonTab}>
+              <TouchableHighlight style={styles.set_buttonTab} onPress = {showAlert}>
                 <MaterialCommunityIcons style={styles.set_imagefe} name="arrange-send-backward"  size={30} />
               </TouchableHighlight>
           </View>
           <View style = {styles.Button_tab}>
-              <TouchableHighlight style={styles.set_buttonTab}>
+              <TouchableHighlight style={styles.set_buttonTab} onPress = {showAlert}>
                 <AntDesign style={styles.set_imageHome} name="pluscircleo"  size={30} />
               </TouchableHighlight>
           </View>
           <View style = {styles.Button_tab}>
-             <TouchableHighlight style={styles.set_buttonTab}>
+             <TouchableHighlight style={styles.set_buttonTab} onPress = {showAlert}>
                 <AntDesign style={styles.set_imageConnect} name="user"  size={30}  />
              </TouchableHighlight>
           </View>
@@ -141,12 +141,12 @@ const styles = StyleSheet.create({
     
   },
   Infor: {
-    flex: 0.1,
+    flex: 0.09,
     flexDirection: 'row',
     backgroundColor: '#ffffff',
   },
   Bottom_container: {
-    flex: 0.575,
+    flex: 0.585,
     flexDirection: 'row',
     justifyContent:'center',
    // backgroundColor: '#00ff00',
@@ -225,18 +225,18 @@ const styles = StyleSheet.create({
     color: '#273357',
     },
   set_textFollow:{
-    fontSize: 17,
+    fontSize: 19,
     textAlign: 'center',
     fontWeight: 'bold',
     //paddingTop: 12,
-    marginTop: 12,
+    marginTop: 10,
     color: '#ffffff'
   },
   set_iconSent:{
    textAlign: 'center',
    // paddingTop: 12,
-   marginTop:12,
-    color: '#ffffff'
+   marginTop:9,
+   color: '#ffffff'
   },
   set_textNormalInfor:{
       fontSize: 14,
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     borderRadius:25,
     backgroundColor: '#0553d0',
     overflow: 'hidden',
-    marginTop: 16,
+    marginTop: 10,
     marginBottom: 15,
     
       },
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     borderRadius:25,
     backgroundColor: '#27e2fa',
     overflow: 'hidden',
-    marginTop: 16,
+    marginTop: 10,
     marginBottom: 15,
     marginLeft: 8,
     marginRight: 8,
